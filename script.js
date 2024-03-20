@@ -1,4 +1,11 @@
-document.getElementById("submit").addEventListener("click", function() {
+document.getElementById("intervalsInput").addEventListener("keypress", function(event) {
+  if (event.key === "Enter") {
+    event.preventDefault();
+    handleMatrixOperation();
+  }
+});
+
+function handleMatrixOperation() {
   const input = document.getElementById("intervalsInput").value;
   const matrix = JSON.parse(input);
 
@@ -26,4 +33,4 @@ document.getElementById("submit").addEventListener("click", function() {
 
   // Displaying the modified matrix
   document.getElementById("output").innerText = JSON.stringify(matrix);
-});
+}
